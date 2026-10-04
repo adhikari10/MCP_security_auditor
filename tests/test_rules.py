@@ -105,4 +105,10 @@ async def test_vulnerable_server_answer_key():
     findings = run_rules(tools, entry, "vulnerable-test-server")
 
     assert {(f.rule_id, f.target) for f in findings} == EXPECTED
-    assert "add" not in {f.target for f in findings}
+    flagged = {f.target for f in findings}
+    assert "add" not in flagged
+
+    # Known gap: this attack avoids every keyword our rules look for.
+    # The LLM check exists to close it. If this assert ever fails,
+    # a rule got smarter and the answer key should be updated.
+    assert "get_forecast" not in flagged
