@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "vulnerable-test-server": {
+      "command": ".venv/Scripts/python.exe",
+      "args": ["test_servers/vulnerable_server.py"],
+      "env": {
+        "WEATHER_API_KEY": "sk-test-FAKE1234567890abcdefFAKE"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Virtual environment (recreate with: pip install -r requirements.txt)
+.venv/
+
+# Python cache files, generated automatically when code runs
+__pycache__/
+*.pyc
+
+# Secrets and local settings
+.env
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Test tool caches
+.pytest_cache/
